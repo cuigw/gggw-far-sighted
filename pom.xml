@@ -21,6 +21,7 @@
         <spring-data-redis.version>1.7.1.RELEASE</spring-data-redis.version>
         <spring-data-mongodb.version>1.9.1.RELEASE</spring-data-mongodb.version>
         <guava-version>19.0</guava-version>
+        <lang3-version>3.4</lang3-version>
         <lombok-version>1.16.14</lombok-version>
         <owner-version>1.0.8</owner-version>
     </properties>
@@ -134,6 +135,11 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>${guava-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${lang3-version}</version>
         </dependency>
 
         <!-- lombok -->
