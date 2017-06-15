@@ -22,6 +22,7 @@
         <spring-data-mongodb.version>1.9.1.RELEASE</spring-data-mongodb.version>
         <guava-version>19.0</guava-version>
         <lombok-version>1.16.14</lombok-version>
+        <owner-version>1.0.8</owner-version>
     </properties>
 
     <modules>
@@ -140,6 +141,13 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok-version}</version>
+        </dependency>
+
+        <!-- Owner 用于读取配置 -->
+        <dependency>
+            <groupId>org.aeonbits.owner</groupId>
+            <artifactId>owner</artifactId>
+            <version>${owner-version}</version>
         </dependency>
 
         <!-- modules -->
