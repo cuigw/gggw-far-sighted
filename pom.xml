@@ -7,7 +7,6 @@
     <artifactId>gggw-far-sighted</artifactId>
     <packaging>pom</packaging>
     <version>${cgw.farsighted.version}</version>
-
     <properties>
         <cgw.farsighted.version>1.0.0</cgw.farsighted.version>
         <java-version>1.8</java-version>
@@ -28,6 +27,8 @@
 
     <modules>
         <module>farsighted-core</module>
+        <module>farsighted-guava</module>
+        <module>farsighted-mongodb</module>
     </modules>
 
     <dependencies>
@@ -80,6 +81,11 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
             <version>${spring.version}</version>
         </dependency>
         <!-- spring end -->
@@ -156,12 +162,22 @@
             <version>${owner-version}</version>
         </dependency>
 
-        <!-- modules -->
+        <!-- modules
         <dependency>
             <groupId>com.gggw</groupId>
             <artifactId>farsighted-core</artifactId>
             <version>${cgw.farsighted.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.gggw</groupId>
+            <artifactId>farsighted-guava</artifactId>
+            <version>${cgw.farsighted.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.gggw</groupId>
+            <artifactId>farsighted-mongodb</artifactId>
+            <version>${cgw.farsighted.version}</version>
+        </dependency>-->
     </dependencies>
 
 </project>
