@@ -1,9 +1,9 @@
 package com.gggw.cache.provider.redis;
 
-import com.caocao.cache.core.Cache;
-import com.caocao.cache.core.CacheException;
-import com.caocao.cache.core.CacheExpiredListener;
-import com.caocao.cache.core.CacheProvider;
+import com.gggw.cache.core.Cache;
+import com.gggw.cache.core.CacheException;
+import com.gggw.cache.core.CacheExpiredListener;
+import com.gggw.cache.core.CacheProvider;
 
 import java.util.Properties;
 

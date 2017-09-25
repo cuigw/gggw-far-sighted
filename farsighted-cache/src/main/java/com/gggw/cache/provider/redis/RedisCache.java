@@ -1,7 +1,7 @@
 package com.gggw.cache.provider.redis;
 
-import com.caocao.cache.core.Cache;
-import com.caocao.cache.core.CacheException;
+import com.gggw.cache.core.Cache;
+import com.gggw.cache.core.CacheException;
 
 import java.util.List;
 

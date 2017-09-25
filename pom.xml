@@ -27,6 +27,7 @@
 
     <modules>
         <module>farsighted-core</module>
+        <module>farsighted-cache</module>
         <module>farsighted-guava</module>
         <module>farsighted-mongodb</module>
     </modules>

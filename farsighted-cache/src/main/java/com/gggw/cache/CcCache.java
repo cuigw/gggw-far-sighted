@@ -1,8 +1,8 @@
 package com.gggw.cache;
 
-import com.caocao.cache.core.CacheChannel;
-import com.caocao.cache.core.CacheException;
-import com.caocao.cache.core.CacheManager;
+import com.gggw.cache.core.CacheChannel;
+import com.gggw.cache.core.CacheException;
+import com.gggw.cache.core.CacheManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
