@@ -4,21 +4,20 @@ import java.util.List;
 
 /**
  * 缓存接口
- * 线程安全.
  *
  * @author cgw
  */
 public interface Cache {
 
 	/**
-	 * Get an item from the cache, nontransactionally
+	 * 从cache中获取值
 	 * @param key cache key
 	 * @return the cached object or null
 	 */
 	public Object get(Object key) throws CacheException;
 	
 	/**
-	 * Add an item to the cache, nontransactionally, with
+	 * 往cache中插入值
 	 * failfast semantics
 	 * @param key cache key
 	 * @param value cache value
@@ -26,7 +25,7 @@ public interface Cache {
 	public void put(Object key, Object value) throws CacheException;
 	
 	/**
-	 * Add an item to the cache, nontransactionally, with
+	 * 往cache中插入值，且有过期时间
 	 * failfast semantics
 	 * @param key
 	 * @param value
@@ -36,14 +35,14 @@ public interface Cache {
 	public void put(Object key, Object value, Integer expireInSec) throws CacheException;
 	
 	/**
-	 * Add an item to the cache
+	 * 更新
 	 * @param key cache key
 	 * @param value cache value
 	 */
 	public void update(Object key, Object value) throws CacheException;
 	
 	/**
-	 * Add an item to the cache
+	 * 更新（过期时间）
 	 * @param key
 	 * @param value
 	 * @param expireInSec  expire time. (seconds)
@@ -55,25 +54,26 @@ public interface Cache {
 	public List keys() throws CacheException ;
 	
 	/**
+	 * 删除
 	 * @param key Cache key
 	 * Remove an item from the cache
 	 */
 	public void evict(Object key) throws CacheException;
 	
 	/**
-	 * Batch remove cache objects
+	 * 批量删除
 	 * @param keys the cache keys to be evicted
 	 */
 	@SuppressWarnings("rawtypes")
 	public void evict(List keys) throws CacheException;
 	
 	/**
-	 * Clear the cache
+	 * 清空
 	 */
 	public void clear() throws CacheException;
 	
 	/**
-	 * Clean up
+	 * 清理
 	 */
 	public void destroy() throws CacheException;
 	

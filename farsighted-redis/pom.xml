@@ -8,7 +8,7 @@
         <artifactId>gggw-far-sighted</artifactId>
         <version>1.0.0</version>
     </parent>
-    <artifactId>farsighted-mongodb</artifactId>
+    <artifactId>farsighted-redis</artifactId>
     <dependencies>
 
         <dependency>

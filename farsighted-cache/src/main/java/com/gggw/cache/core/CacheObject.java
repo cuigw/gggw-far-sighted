@@ -2,11 +2,11 @@ package com.gggw.cache.core;
 
 /**
  * 所获取的缓存对象
- * @author winterlau
+ * @author cgw
  */
 public class CacheObject {
 
-	//缓存区域
+	//缓存类型(前缀)
 	private String region;
 
 	private Object key;

@@ -3,35 +3,12 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.gggw</groupId>
-    <artifactId>gggw-far-sighted</artifactId>
-    <packaging>pom</packaging>
-    <version>${cgw.farsighted.version}</version>
-    <properties>
-        <cgw.farsighted.version>1.0.0</cgw.farsighted.version>
-        <java-version>1.8</java-version>
-        <spring.version>4.2.5.RELEASE</spring.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <mysql-connector-java.version>5.1.35</mysql-connector-java.version>
-        <druid-version>1.0.29</druid-version>
-        <mybatis-version>3.3.0</mybatis-version>
-        <mybatis-spring-version>1.3.0</mybatis-spring-version>
-        <servlet-version>3.1.0</servlet-version>
-        <spring-data-redis.version>1.7.1.RELEASE</spring-data-redis.version>
-        <spring-data-mongodb.version>1.9.1.RELEASE</spring-data-mongodb.version>
-        <guava-version>19.0</guava-version>
-        <lang3-version>3.4</lang3-version>
-        <lombok-version>1.16.14</lombok-version>
-        <owner-version>1.0.8</owner-version>
-    </properties>
-
-    <modules>
-        <module>farsighted-core</module>
-        <module>farsighted-cache</module>
-        <module>farsighted-guava</module>
-        <module>farsighted-mongodb</module>
-        <module>farsighted-redis</module>
-    </modules>
+    <parent>
+        <groupId>com.gggw</groupId>
+        <artifactId>gggw-far-sighted</artifactId>
+        <version>1.0.0</version>
+    </parent>
+    <artifactId>farsighted-core</artifactId>
 
     <dependencies>
         <!-- spring start -->
@@ -157,29 +134,10 @@
             <version>${lombok-version}</version>
         </dependency>
 
-        <!-- Owner 用于读取配置 -->
         <dependency>
-            <groupId>org.aeonbits.owner</groupId>
-            <artifactId>owner</artifactId>
-            <version>${owner-version}</version>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>RELEASE</version>
         </dependency>
-
-        <!-- modules
-        <dependency>
-            <groupId>com.gggw</groupId>
-            <artifactId>farsighted-core</artifactId>
-            <version>${cgw.farsighted.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.gggw</groupId>
-            <artifactId>farsighted-guava</artifactId>
-            <version>${cgw.farsighted.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.gggw</groupId>
-            <artifactId>farsighted-mongodb</artifactId>
-            <version>${cgw.farsighted.version}</version>
-        </dependency>-->
     </dependencies>
-
 </project>

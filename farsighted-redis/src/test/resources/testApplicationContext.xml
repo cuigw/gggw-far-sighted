@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd ">
+    <context:property-placeholder location="file:/etc/caocao/center/sysConf.properties"/>
+    <!-- 引入的文件 -->
+
+
+    <bean id="authJedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxTotal" value="10"/>
+        <property name="maxIdle" value="5"/>
+        <property name="maxWaitMillis" value="3000"/>
+        <property name="testOnBorrow" value="false"/>
+        <property name="testOnReturn" value="false"/>
+        <property name="testWhileIdle" value="true"/>
+    </bean>
+
+    <!-- 替换为配置CodisConnectionFactory -->
+    <bean id="authConnectionFactory" class="com.caocao.bridge.codis.proxy.CodisConnectionFactory">
+        <property name="codisName" value="${codis.proxy.codisName}"/>
+        <property name="zkServer"  value="${codis.proxy.zkServer}"/>
+        <property name="password"  value="${codis.proxy.password}"/>
+        <property name="retryTimes" value="${codis.proxy.retryTimes}"/>
+        <property name="retryWaitMills" value="${codis.proxy.retryWaitMills}"/>
+        <property name="timeout" value="1000000"/>
+        <property name="poolConfig" ref="authJedisPoolConfig"/>
+    </bean>
+
+    <bean name="authRedisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+        <property name="connectionFactory" ref="authConnectionFactory"/>
+        <property name="keySerializer">
+            <bean class="org.springframework.data.redis.serializer.GenericToStringSerializer">
+                <constructor-arg type="java.lang.Class" value="java.lang.Object"/>
+            </bean>
+        </property>
+        <property name="valueSerializer">
+            <bean class="org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer"/>
+        </property>
+        <property name="hashKeySerializer">
+            <bean class="org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer"/>
+        </property>
+        <property name="hashValueSerializer">
+            <bean class="org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer"/>
+        </property>
+    </bean>
+    <bean name="authStringRedisTemplate"
+          class="org.springframework.data.redis.core.StringRedisTemplate">
+        <property name="connectionFactory" ref="authConnectionFactory"/>
+    </bean>
+
+</beans>

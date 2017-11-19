@@ -1,8 +1,8 @@
 package com.gggw.cache.core;
 
-import com.caocao.cache.CcCache;
-import com.caocao.cache.provider.def.DefaultCacheProvider;
-import com.caocao.cache.provider.redis.RedisCacheProvider;
+import com.gggw.cache.CcCache;
+import com.gggw.cache.provider.def.DefaultCacheProvider;
+import com.gggw.cache.provider.redis.RedisCacheProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,6 +21,7 @@ public class CacheManager {
 
     //一级缓存
     private static CacheProvider l1_provider;
+
     //二级缓存
     private static CacheProvider l2_provider;
 
