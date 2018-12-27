@@ -10,7 +10,7 @@ import java.nio.channels.FileChannel;
 public class ReadFileTest {
 
     public static void main(String[] args) {
-        //read("/etc/caocao/schedule/sysConf.properties");
+        //read("/etc/caouucao/schedule/sysConf.properties");
         read();
     }
 
@@ -65,7 +65,7 @@ public class ReadFileTest {
 
     public static void read() {
         try{
-            RandomAccessFile aFile = new RandomAccessFile("/etc/caocao/schedule/sysConf.properties", "rw");
+            RandomAccessFile aFile = new RandomAccessFile("/etc/caouucao/schedule/sysConf.properties", "rw");
             FileChannel fileChannel = aFile.getChannel();
             //分配缓存区大小
             ByteBuffer buf = ByteBuffer.allocate(48);

@@ -7,7 +7,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd ">
-    <context:property-placeholder location="file:/etc/caocao/center/sysConf.properties"/>
+    <context:property-placeholder location="file:/etc/caouucao/center/sysConf.properties"/>
     <!-- 引入的文件 -->
 
 
@@ -21,7 +21,7 @@
     </bean>
 
     <!-- 替换为配置CodisConnectionFactory -->
-    <bean id="authConnectionFactory" class="com.caocao.bridge.codis.proxy.CodisConnectionFactory">
+    <bean id="authConnectionFactory" class="com.caouucao.bridge.codis.proxy.CodisConnectionFactory">
         <property name="codisName" value="${codis.proxy.codisName}"/>
         <property name="zkServer"  value="${codis.proxy.zkServer}"/>
         <property name="password"  value="${codis.proxy.password}"/>
